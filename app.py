@@ -27,7 +27,7 @@ SECRET_IV = b'6oyZDr22E3ychjM%'
 TARGET_URL = "https://loginbp.ggpolarbear.com/MajorModifyNickname"
 MAJOR_LOGIN_URL = "https://loginbp.ggblueshark.com/MajorLogin"
 
-GAME_VERSION = "OB53"
+GAME_VERSION = "OB54"
 UNITY_VERSION = "2018.4.11f1"
 USER_AGENT = "Dalvik/2.1.0 (Linux; U; Android 11; SM-A305F Build/RP1A.200720.012)"
 
