@@ -30,12 +30,10 @@ MAJOR_LOGIN_URL = "https://loginbp.ggblueshark.com/MajorLogin"
 GAME_VERSION = "OB53"
 UNITY_VERSION = "2018.4.11f1"
 USER_AGENT = "Dalvik/2.1.0 (Linux; U; Android 11; SM-A305F Build/RP1A.200720.012)"
-DEVELOPERS = "@STAR_GMR"
 
 def generate_error_payload(reason, http_status, extra_data=None):
     payload = {
         "metadata": {
-            "author": DEVELOPERS,
             "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
         },
         "response_status": "ERROR",
@@ -146,8 +144,8 @@ def perform_majorlogin(access_token, open_id):
         game_data.timestamp = "2024-12-05 18:15:32"
         game_data.game_name = "free fire"
         game_data.game_version = 1
-        game_data.version_code = "1.108.3"
-        game_data.os_info = "Android OS 9 / API-28 (PI/rel.cjw.20220518.114133)"
+        game_data.version_code = "1.123.1"
+        game_data.os_info = "Android OS 11 / API-30 (RP1A.200720.012/RP1A.200720.012)"
         game_data.device_type = "Handheld"
         game_data.network_provider = "Verizon Wireless"
         game_data.connection_type = "WIFI"
@@ -170,7 +168,7 @@ def perform_majorlogin(access_token, open_id):
         encrypted_data = encrypt_message(game_data.SerializeToString())
 
         headers = {
-            "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; ASUS_Z01QD Build/PI)",
+            "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 11; SM-A305F Build/RP1A.200720.012)",
             "Connection": "Keep-Alive",
             "Accept-Encoding": "gzip",
             "Content-Type": "application/octet-stream",
@@ -236,7 +234,6 @@ def execute_nickname_change(jwt_token, target_name, auth_type, token_status):
 
         return jsonify({
             "metadata": {
-                "author": DEVELOPERS,
                 "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
             },
             "response_status": "SUCCESS" if success_flag else "FAILED",
@@ -270,7 +267,6 @@ def api_documentation():
     return jsonify({
         "system_information": {
             "application": "Free Fire Nickname Modifier API",
-            "developer": DEVELOPERS,
             "game_version_target": GAME_VERSION,
             "description": "JSON API for modifying game nicknames via Guest UID or OAuth Tokens."
         },
